@@ -96,6 +96,10 @@ You can use the API to evaluate various mathematical expressions. Here are some 
 5. Expression with Negative Numbers:
     - Expression: `-5 + 8`
     - Result: `3`
+   
+6. Text Expression with Numbers:
+   - Expression: `"2 times 2 divided by 3"`
+   - Result: `1.3333334`
 
 Feel free to explore different mathematical expressions and test the capabilities of the calculator API.
 

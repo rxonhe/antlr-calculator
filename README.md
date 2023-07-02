@@ -65,10 +65,6 @@ The frontend development server will start running on `http://localhost:3000`.
 
 ## API Usage
 
-### Evaluate Expression
-
-Certainly! Here are the updated use examples in a more concise and friendly format:
-
 ### Evaluate Mathematical Expressions
 
 You can use the API to evaluate various mathematical expressions. Here are some examples:

@@ -103,10 +103,6 @@ You can use the API to evaluate various mathematical expressions. Here are some 
 
 Feel free to explore different mathematical expressions and test the capabilities of the calculator API.
 
----
-
-The API allows you to evaluate mathematical expressions by sending a POST request to the `/calculator/evaluate` endpoint with the expression in the request body. The response will contain the evaluated result.
-
 ## Contributing
 
 Contributions are welcome! If you have any suggestions, bug reports, or feature requests, please open an issue on the repository.

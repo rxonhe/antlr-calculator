@@ -106,9 +106,3 @@ Feel free to explore different mathematical expressions and test the capabilitie
 ## Contributing
 
 Contributions are welcome! If you have any suggestions, bug reports, or feature requests, please open an issue on the repository.
-
----
-
-Feel free to customize the README file according to your project's specific details, such as project structure, additional endpoints, and any other relevant information.
-
-Make sure to include the necessary sections, such as Getting Started, API Usage, Contributing, and License. Provide clear instructions for installation, running the backend and frontend, and examples of API usage.

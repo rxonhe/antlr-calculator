@@ -2,6 +2,14 @@ import com.choinhet.calculator.CalculatorBaseVisitor
 import com.choinhet.calculator.CalculatorParser
 
 class CalculatorEvalVisitor : CalculatorBaseVisitor<Float>() {
+    private val operationVocabulary: Map<String, List<String>>
+        get() = mapOf(
+            "*" to listOf("*", "x", "X", "multiplied by", "times", "multiplied"),
+            "/" to listOf("/", "÷", "divided by", "over"),
+            "+" to listOf("+", "plus", "added to", "add", "sum"),
+            "-" to listOf("-", "minus", "subtracted from", "subtract", "sub")
+        )
+
     private val operatorMap = mapOf(
         "*" to { left: Float, right: Float -> left.times(right) },
         "/" to { left: Float, right: Float -> left.div(right) },
@@ -28,7 +36,7 @@ class CalculatorEvalVisitor : CalculatorBaseVisitor<Float>() {
     private fun evaluateBinaryExpression(ctx: CalculatorParser.ExpressionContext, operator: String): Float {
         val left = visit(ctx.expression(0))
         val right = visit(ctx.expression(1))
-        val operation = operatorMap[operator]
+        val operation = operationVocabulary.entries.find { it.value.contains(operator) }?.key.let { operatorMap[it] }
             ?: throw IllegalArgumentException("Invalid operator: $operator")
         return operation(left, right)
     }

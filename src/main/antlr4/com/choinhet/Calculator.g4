@@ -26,11 +26,11 @@ parenthesisExpression
 // lexer rules
 NUMBER: [0-9]+ ;
 WHITESPACE: [ \t\n\r]+ -> skip ;
-DIVISION: '/' ;
-MULTIPLICATION: '*' ;
-SUM: '+' ;
-SUBTRACTION: '-' ;
-LPAREN : '(' ;
-RPAREN : ')' ;
+DIVISION: '/' | '÷' | 'divided by' | 'over' ;
+MULTIPLICATION: '*' | 'x' | 'X' | 'multiplied by' | 'times' | 'multiplied';
+SUM: '+' | 'plus' | 'added to' | 'add' | 'sum';
+SUBTRACTION: '-' | 'minus' | 'subtracted from' | 'subtract' | 'sub';
+LPAREN : '(' | '[' | '{';
+RPAREN : ')' | ']' | '}';
 
 ERROR: . -> skip; // Skips any unrecognized characters causing token recognition errors

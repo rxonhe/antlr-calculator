@@ -105,10 +105,6 @@ Feel free to explore different mathematical expressions and test the capabilitie
 
 ---
 
-You can replace the existing use examples in the README file with these updated examples. The new format provides a clear and concise representation of each use case.
-
-If you have any further questions or need additional assistance, please let me know!
-
 The API allows you to evaluate mathematical expressions by sending a POST request to the `/calculator/evaluate` endpoint with the expression in the request body. The response will contain the evaluated result.
 
 ## Contributing

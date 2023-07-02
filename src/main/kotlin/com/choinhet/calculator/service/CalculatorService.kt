@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service
 
 @Service
 class CalculatorService {
-    fun calculate(expression: String): Int {
+    fun calculate(expression: String): Float {
         val inputCharStream = CharStreams.fromString(expression)
         val lexer = CalculatorLexer(inputCharStream)
         val tokens = CommonTokenStream(lexer)

@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController
 @RequestMapping("/calculator")
 class CalculatorController(private val calculatorService: CalculatorService) {
     @PostMapping("/evaluate")
-    fun evaluateExpression(@RequestBody expression: String): ResponseEntity<Int> {
+    fun evaluateExpression(@RequestBody expression: String): ResponseEntity<Float> {
         val result = calculatorService.calculate(expression)
         return ResponseEntity.ok(result)
     }

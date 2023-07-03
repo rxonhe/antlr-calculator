@@ -2,13 +2,12 @@ import com.choinhet.calculator.CalculatorBaseVisitor
 import com.choinhet.calculator.CalculatorParser
 
 class CalculatorEvalVisitor : CalculatorBaseVisitor<Float>() {
-    private val operationVocabulary: Map<String, List<String>>
-        get() = mapOf(
-            "*" to listOf("*", "x", "X", "multiplied by", "times", "multiplied"),
-            "/" to listOf("/", "÷", "divided by", "over"),
-            "+" to listOf("+", "plus", "added to", "add", "sum"),
-            "-" to listOf("-", "minus", "subtracted from", "subtract", "sub")
-        )
+    private val operationVocabulary = mapOf(
+        "*" to listOf("*", "x", "X", "multiplied by", "times", "multiplied"),
+        "/" to listOf("/", "÷", "divided by", "over"),
+        "+" to listOf("+", "plus", "added to", "add", "sum"),
+        "-" to listOf("-", "minus", "subtracted from", "subtract", "sub")
+    )
 
     private val operatorMap = mapOf(
         "*" to { left: Float, right: Float -> left.times(right) },

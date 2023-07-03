@@ -16,7 +16,7 @@ To get started with the project, follow the instructions below.
 1. Clone the repository to your local machine:
 
 ```shell
-git clone https://github.com/your-username/calculator.git
+git clone https://github.com/rxonhe/antlr-calculator.git
 ```
 
 2. Change into the project directory:

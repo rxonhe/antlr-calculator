@@ -2,12 +2,10 @@ package com.choinhet.calculator.controller
 
 import com.choinhet.calculator.service.CalculatorService
 import org.springframework.http.ResponseEntity
-import org.springframework.web.bind.annotation.PostMapping
-import org.springframework.web.bind.annotation.RequestBody
-import org.springframework.web.bind.annotation.RequestMapping
-import org.springframework.web.bind.annotation.RestController
+import org.springframework.web.bind.annotation.*
 
 @RestController
+@CrossOrigin(origins = ["http://localhost:3000"])
 @RequestMapping("/calculator")
 class CalculatorController(private val calculatorService: CalculatorService) {
     @PostMapping("/evaluate")

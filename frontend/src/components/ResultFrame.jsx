@@ -1,11 +1,12 @@
 import React from 'react';
 import '../css/ResultFrame.css';
+import '../css/Util.css';
 
 const ResultFrame = ({ result }) => {
     return (
-        <div>
-            <h2>Result:</h2>
-            <div>{result !== null ? result : 'No result yet'}</div>
+        <div className={"result-container"}>
+            <h2 className={"result-text"}>Result:</h2>
+            <div >{result !== null ? result : 'No result yet'}</div>
         </div>
     );
 };

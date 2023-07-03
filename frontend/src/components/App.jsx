@@ -3,6 +3,7 @@ import SearchBar from './SearchBar';
 import ResultFrame from './ResultFrame';
 import axios from 'axios';
 import API_CONFIG from "../config/config";
+import '../css/Util.css';
 
 class App extends Component {
     constructor(props) {
@@ -33,7 +34,7 @@ class App extends Component {
     render() {
         const {result} = this.state;
         return (
-            <div>
+            <div className={"main-page"}>
                 <SearchBar onEvaluate={this.handleExpressionEvaluate}/>
                 <ResultFrame result={result}/>
             </div>

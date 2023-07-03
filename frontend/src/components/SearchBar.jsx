@@ -22,9 +22,9 @@ class SearchBar extends Component {
     render() {
         const { expression } = this.state;
         return (
-            <div>
-                <input type="text" value={expression} onChange={this.handleExpressionChange} />
-                <button onClick={this.handleEvaluateClick}>Evaluate</button>
+            <div className={"search-bar-container"}>
+                <input type="text" value={expression} className={"input"} onChange={this.handleExpressionChange} />
+                <button onClick={this.handleEvaluateClick} className={"button"}>Evaluate</button>
             </div>
         );
     }

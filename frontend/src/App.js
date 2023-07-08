@@ -1,9 +1,8 @@
 import React, {Component} from 'react';
-import SearchBar from './SearchBar';
-import ResultFrame from './ResultFrame';
-import axios from 'axios';
-import API_CONFIG from "../config/config";
-import '../css/Util.css';
+import SearchBar from './components/SearchBar';
+import ResultFrame from './components/ResultFrame';
+import api from './api/axiosConfig.js';
+import './css/Util.css';
 
 class App extends Component {
     constructor(props) {
@@ -14,14 +13,10 @@ class App extends Component {
     }
 
     handleExpressionEvaluate = (expression) => {
-        const { baseURL, endpoints } = API_CONFIG;
-        const evaluateURL = baseURL + endpoints.evaluate;
-         // Use the expression value directly
-        axios
-            .post(evaluateURL, expression, { headers: { 'Content-Type': 'application/json' } })
+        api.post("/calculator/evaluate", expression, {headers: {'Content-Type': 'application/json'}})
             .then(response => {
                 const evaluatedResult = response.data;
-                this.setState({ result: evaluatedResult });
+                this.setState({result: evaluatedResult});
             })
             .catch(error => {
                 console.log(error);

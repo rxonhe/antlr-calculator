@@ -1,41 +1,18 @@
-import React, {Component} from 'react';
-import SearchBar from './components/SearchBar';
-import ResultFrame from './components/ResultFrame';
-import api from './api/axiosConfig.js';
-import './css/Util.css';
+import React from 'react';
+import {Route, Routes} from "react-router-dom";
+import Home from "./components/home/Home";
+import Layout from "./components/Layout";
 
-class App extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            result: null,
-        };
-    }
-
-    handleExpressionEvaluate = (expression) => {
-        api.post("/calculator/evaluate", expression, {headers: {'Content-Type': 'application/json'}})
-            .then(response => {
-                const evaluatedResult = response.data;
-                this.setState({result: evaluatedResult});
-            })
-            .catch(error => {
-                console.log(error);
-            });
-    };
-
-
-// ...
-
-    render() {
-        const {result} = this.state;
-        return (
-            <div className={"main-page"}>
-                <SearchBar onEvaluate={this.handleExpressionEvaluate}/>
-                <ResultFrame result={result}/>
-            </div>
-        );
-    }
-
-}
+const App = () => {
+    return (
+        <div className="App">
+            <Routes>
+                <Route path="/" element={<Layout/>}>
+                    <Route path="/" element={<Home/>}/>
+                </Route>
+            </Routes>
+        </div>
+    );
+};
 
 export default App;

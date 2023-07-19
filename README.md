@@ -10,6 +10,8 @@ To get started with the project, follow the instructions below.
 
 - Java Development Kit (JDK) 17 or higher
 - Node.js and npm
+- Docker
+- Docker Compose
 
 ### Installation
 
@@ -25,43 +27,21 @@ git clone https://github.com/rxonhe/antlr-calculator.git
 cd calculator
 ```
 
-### Backend Setup
+### Setup Using Docker Compose
 
-1. Build the backend using Gradle:
-
-```shell
-./gradlew build
-```
-
-2. Run the backend server:
+1. Build the services using Docker Compose:
 
 ```shell
-./gradlew bootRun
+docker-compose build
 ```
 
-The backend server will start running on `http://localhost:8080`.
-
-### Frontend Setup
-
-1. Change into the frontend directory:
+2. Run the services:
 
 ```shell
-cd frontend
+docker-compose up
 ```
 
-2. Install the dependencies:
-
-```shell
-npm install
-```
-
-3. Start the frontend development server:
-
-```shell
-npm start
-```
-
-The frontend development server will start running on `http://localhost:3000`.
+The frontend will be accessible on `http://localhost:8080`, and the backend will be accessible on `http://localhost:8081` or `http://localhost:8080/api`.
 
 ## API Usage
 
@@ -69,30 +49,30 @@ The frontend development server will start running on `http://localhost:3000`.
 
 You can use the API to evaluate various mathematical expressions. Here are some examples:
 
-**Endpoint**: `/calculator/evaluate`
+**Endpoint**: `/api/v1/calculator/evaluate`
 
 **Method**: `POST`
 
 1. Simple Addition:
-    - Expression: `2 + 2`
-    - Result: `4`
+   - Expression: `2 + 2`
+   - Result: `4`
 
 2. Complex Expression with Multiple Operations:
-    - Expression: `(2 + 3) * 4 - 6 / 2`
-    - Result: `16`
+   - Expression: `(2 + 3) * 4 - 6 / 2`
+   - Result: `16`
 
 3. Expression with Multiplication and Division:
-    - Expression: `10 * 2 / 5`
-    - Result: `4`
+   - Expression: `10 * 2 / 5`
+   - Result: `4`
 
 4. Expression with Parentheses:
-    - Expression: `2 * (3 + 4)`
-    - Result: `14`
+   - Expression: `2 * (3 + 4)`
+   - Result: `14`
 
 5. Expression with Negative Numbers:
-    - Expression: `-5 + 8`
-    - Result: `3`
-   
+   - Expression: `-5 + 8`
+   - Result: `3`
+
 6. Text Expression with Numbers:
    - Expression: `"2 times 2 divided by 3"`
    - Result: `1.3333334`

@@ -22,14 +22,12 @@ repositories {
 }
 
 dependencies {
-//    implementation("org.springframework.boot:spring-boot-starter-data-jpa")
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("org.springframework.boot:spring-boot-starter-webflux")
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
     implementation("io.projectreactor.kotlin:reactor-kotlin-extensions")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-reactor")
-    implementation("com.javiersc.kotlin:kotlin-stdlib:0.1.0-alpha.11")
     developmentOnly("org.springframework.boot:spring-boot-devtools")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("io.projectreactor:reactor-test")
@@ -58,11 +56,13 @@ tasks.register<AntlrTask>("generateCalculatorGrammarSource") {
 }
 
 tasks.named("generateTestGrammarSource").get().enabled = false
+tasks.named("generateGrammarSource").get().enabled = false
 
 tasks.withType<KotlinCompile>().configureEach {
     dependsOn("generateCalculatorGrammarSource")
     source("src/main/java", "${project.buildDir}/generated-src/antlr/main")
 }
+
 tasks.withType<KotlinCompile> {
     kotlinOptions {
         freeCompilerArgs += "-Xjsr305=strict"

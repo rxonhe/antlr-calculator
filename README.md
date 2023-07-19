@@ -21,12 +21,6 @@ To get started with the project, follow the instructions below.
 git clone https://github.com/rxonhe/antlr-calculator.git
 ```
 
-2. Change into the project directory:
-
-```shell
-cd calculator
-```
-
 ### Setup Using Docker Compose
 
 1. Build the services using Docker Compose:

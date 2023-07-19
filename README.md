@@ -35,7 +35,7 @@ docker-compose build
 docker-compose up
 ```
 
-The frontend will be accessible on `http://localhost:8080`, and the backend will be accessible on `http://localhost:8081` or `http://localhost:8080/api`.
+The frontend will be accessible on `http://localhost:8080`, and the backend will be accessible on `http://localhost:8080/api`.
 
 ## API Usage
 

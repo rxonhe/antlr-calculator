@@ -1,6 +1,8 @@
-# Calculator API
+# ANTLR Calculator
 
-This is a simple calculator API built using Kotlin, Spring Boot, and ANTLR. It evaluates mathematical expressions and returns the result.
+This project features an NLP-based calculator API with a frontend interface. 
+The backend, developed with Kotlin and Spring Boot, uses ANTLR for parsing and evaluating mathematical expressions expressed in natural language. 
+The frontend, built with React, provides a user-friendly interface for inputting expressions and obtaining accurate results. This integration of technologies enables effortless interaction with the calculator, making complex calculations accessible through natural language queries.
 
 ## Getting Started
 
